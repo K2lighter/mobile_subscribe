@@ -92,8 +92,7 @@ def subscribe_period():
             print("Вы ввели недопустимое количество месяцев")
             subscribe_period()
         else:
-            last_date = last_month(subscribe_month)
-            return last_date
+            return True
 
     except ValueError:
         print("Вы ввели недопустимое значение")
@@ -138,7 +137,7 @@ def main():
     data.insert_tariff("Premium", 1500)
 
     while True:
-        if datetime.date.today() > last_date:
+        if datetime.date.today() > last_month(subscribe_month):
             print("Период подписки закончен")
             return False
         else:
