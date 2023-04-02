@@ -111,8 +111,8 @@ def last_month(sub):
 
 def main():
     global count
-    last_date = subscribe_period()
-    print(f'Тариф действует до {last_date}')
+    subscribe_period()
+    print(f'Тариф действует до {last_month(subscribe_month)}')
     data = DataBase('mobile.db')
     data.create_table("""
     CREATE TABLE IF NOT EXISTS mobile_users(
